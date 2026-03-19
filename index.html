@@ -1265,6 +1265,38 @@
             position: relative;
         }
 
+        /* ========== BG-CREAM OVERRIDES (dark text on light bg) ========== */
+        .bg-cream { color: var(--dark); }
+        .bg-cream .section-label { color: var(--gold); }
+        .bg-cream .section-label::before { background: linear-gradient(270deg, var(--gold), transparent); }
+        .bg-cream .section-label::after { background: linear-gradient(90deg, var(--gold), transparent); }
+        .bg-cream .section-title { color: var(--dark); }
+        .bg-cream .section-title em { -webkit-text-fill-color: var(--gold); background: none; }
+        .bg-cream .section-text { color: #6B6460; }
+        .bg-cream .section-subtitle { color: #6B6460; }
+
+        /* Faciais on cream */
+        .faciais.bg-cream .facial-item h4 { color: var(--dark); }
+        .faciais.bg-cream .facial-item p { color: #6B6460; }
+        .faciais.bg-cream .facial-item { border-bottom-color: rgba(0,0,0,0.08); }
+        .faciais.bg-cream .facial-item:hover { background: rgba(200, 148, 74, 0.06); }
+        .faciais.bg-cream .faciais-collage .img-overlap { border-color: var(--cream); }
+        .faciais.bg-cream .faciais-note { color: #6B6460; }
+
+        /* Experiencias on cream */
+        .experiencias.bg-cream .exp-card { background: #fff; border-color: rgba(0,0,0,0.06); }
+        .experiencias.bg-cream .exp-card:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.08), 0 0 30px rgba(200, 148, 74, 0.08); }
+        .experiencias.bg-cream .exp-card h4 { color: var(--dark); }
+        .experiencias.bg-cream .exp-card p { color: #6B6460; }
+
+        /* FAQ on cream */
+        .faq.bg-cream .faq-item { border-bottom-color: rgba(0,0,0,0.08); }
+        .faq.bg-cream .faq-question h4 { color: var(--dark); }
+        .faq.bg-cream .faq-question:hover h4 { color: var(--gold); }
+        .faq.bg-cream .faq-answer-inner { color: #6B6460; }
+        .faq.bg-cream .faq-toggle { border-color: rgba(200, 148, 74, 0.3); }
+        .faq.bg-cream .btn-outline { border-color: var(--gold); color: var(--gold); }
+
         /* ========== RESULTADOS (BEFORE/AFTER) ========== */
         .resultados { color: var(--dark); }
         .resultados .section-label { color: var(--gold); }
@@ -1890,10 +1922,17 @@
         </div>
     </section>
 
-    <div class="divider-glow"></div>
+    <!-- WAVE soft to cream -->
+    <div class="divider-wave" style="background: var(--dark-soft);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <rect width="1440" height="60" fill="var(--dark-soft)"/>
+            <path d="M0,20 C360,50 720,5 1080,35 S1440,20 1440,20 L1440,60 L0,60 Z" fill="var(--cream)"/>
+            <path d="M0,20 C360,50 720,5 1080,35 S1440,20 1440,20" fill="none" stroke="url(#waveGrad)" stroke-width="1.5"/>
+        </svg>
+    </div>
 
     <!-- PROTOCOLOS FACIAIS -->
-    <section class="section faciais" id="faciais">
+    <section class="section faciais bg-cream" id="faciais">
         <div class="faciais-grid">
             <div class="reveal-left">
                 <p class="section-label">Protocolos Faciais Avançados</p>
@@ -1920,7 +1959,7 @@
                 </div>
                 <p class="section-text" style="margin-top: 24px; font-style: italic; color: var(--gold-pale); font-size: 0.88rem;">Cada protocolo &#233; precedido de uma avalia&#231;&#227;o da pele. Porque tratar sem conhecer &#233; arriscar.</p>
                 <div style="margin-top: 36px;">
-                    <a href="https://api.whatsapp.com/send?phone=351913468193&text=Ol%C3%A1%2C%20eu%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20facial." class="btn-outline-light" target="_blank">Agendar Avaliação Facial</a>
+                    <a href="https://api.whatsapp.com/send?phone=351913468193&text=Ol%C3%A1%2C%20eu%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20facial." class="btn-outline" target="_blank"><span>Agendar Avaliação Facial</span></a>
                 </div>
             </div>
             <div class="faciais-collage reveal-right">
@@ -1935,7 +1974,14 @@
         </div>
     </section>
 
-    <div class="divider-glow"></div>
+    <!-- WAVE cream to soft -->
+    <div class="divider-wave" style="background: var(--cream);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <rect width="1440" height="60" fill="var(--cream)"/>
+            <path d="M0,15 C480,55 960,0 1440,25 L1440,60 L0,60 Z" fill="var(--dark-soft)"/>
+            <path d="M0,15 C480,55 960,0 1440,25" fill="none" stroke="url(#waveGrad)" stroke-width="1.5"/>
+        </svg>
+    </div>
 
     <!-- LASER -->
     <section class="section laser bg-soft" id="laser">
@@ -1974,10 +2020,17 @@
         </div>
     </section>
 
-    <div class="divider-glow"></div>
+    <!-- WAVE soft to cream -->
+    <div class="divider-wave" style="background: var(--dark-soft);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <rect width="1440" height="60" fill="var(--dark-soft)"/>
+            <path d="M0,25 C240,5 480,45 720,20 S1200,40 1440,15 L1440,60 L0,60 Z" fill="var(--cream)"/>
+            <path d="M0,25 C240,5 480,45 720,20 S1200,40 1440,15" fill="none" stroke="url(#waveGrad)" stroke-width="1.5"/>
+        </svg>
+    </div>
 
     <!-- EXPERIENCIAS -->
-    <section class="section experiencias" id="experiencias">
+    <section class="section experiencias bg-cream" id="experiencias">
         <div class="ambient-orb orb-gold" style="width:400px;height:400px;bottom:-100px;right:-100px;"></div>
         <div class="exp-header reveal">
             <p class="section-label center">Experiências Terapêuticas Premium</p>
@@ -2031,14 +2084,7 @@
         </div>
     </section>
 
-    <!-- WAVE DIVIDER dark to cream -->
-    <div class="divider-wave" style="background: var(--dark);">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <rect width="1440" height="60" fill="var(--dark)"/>
-            <path d="M0,15 C480,55 960,0 1440,25 L1440,60 L0,60 Z" fill="var(--cream)"/>
-            <path d="M0,15 C480,55 960,0 1440,25" fill="none" stroke="url(#waveGrad)" stroke-width="1.5"/>
-        </svg>
-    </div>
+    <div class="divider-glow" style="background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.15;"></div>
 
     <!-- RESULTADOS -->
     <section class="section resultados bg-cream" id="resultados">
@@ -2112,7 +2158,6 @@
                 </div>
             </div>
             <div class="equipa-images reveal-right">
-                <img src="fotos/Equipa..jpg" alt="Equipa Aromas do Deserto">
                 <img src="fotos/Sónia  e Mariana1..jpg" alt="Sonia e Mariana">
                 <img src="fotos/12.jpg" alt="Equipa na recepcao">
             </div>
@@ -2148,17 +2193,24 @@
         </div>
     </section>
 
-    <div class="divider-glow"></div>
+    <!-- WAVE soft to cream -->
+    <div class="divider-wave" style="background: var(--dark-soft);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <rect width="1440" height="60" fill="var(--dark-soft)"/>
+            <path d="M0,15 C480,55 960,0 1440,25 L1440,60 L0,60 Z" fill="var(--cream)"/>
+            <path d="M0,15 C480,55 960,0 1440,25" fill="none" stroke="url(#waveGrad)" stroke-width="1.5"/>
+        </svg>
+    </div>
 
     <!-- FAQ -->
-    <section class="section faq" id="faq">
+    <section class="section faq bg-cream" id="faq">
         <div class="faq-grid">
             <div class="reveal-left">
                 <p class="section-label">Perguntas Frequentes</p>
                 <h2 class="section-title">Respostas às dúvidas mais <em>comuns.</em></h2>
                 <p class="section-text">Se a sua dúvida não estiver aqui, estamos sempre disponíveis para conversar.</p>
                 <div style="margin-top: 32px;">
-                    <a href="https://api.whatsapp.com/send?phone=351913468193&text=Ol%C3%A1%2C%20vi%20o%20site%20mas%20ainda%20tenho%20d%C3%BAvidas%20sobre%20esse%20tema%3A" class="btn-outline-light" target="_blank">Falar Connosco</a>
+                    <a href="https://api.whatsapp.com/send?phone=351913468193&text=Ol%C3%A1%2C%20vi%20o%20site%20mas%20ainda%20tenho%20d%C3%BAvidas%20sobre%20esse%20tema%3A" class="btn-outline" target="_blank"><span>Falar Connosco</span></a>
                 </div>
             </div>
             <div class="faq-list reveal-right">
@@ -2210,6 +2262,15 @@
             </div>
         </div>
     </section>
+
+    <!-- WAVE cream to dark -->
+    <div class="divider-wave" style="background: var(--cream);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <rect width="1440" height="60" fill="var(--cream)"/>
+            <path d="M0,20 C360,50 720,5 1080,35 S1440,20 1440,20 L1440,60 L0,60 Z" fill="var(--dark-soft)"/>
+            <path d="M0,20 C360,50 720,5 1080,35 S1440,20 1440,20" fill="none" stroke="url(#waveGrad)" stroke-width="1.5"/>
+        </svg>
+    </div>
 
     <!-- CTA FINAL -->
     <section class="cta-final">
