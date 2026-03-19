@@ -1392,37 +1392,40 @@
 
         .equipa-collage:hover .eq-main img { transform: scale(1.02); filter: grayscale(0%); }
 
-        /* Gold corners on main */
+        /* Gold corners - external with gap */
         .equipa-collage .eq-main::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 50px;
-            height: 50px;
+            top: -12px;
+            left: -12px;
+            width: 60px;
+            height: 60px;
             border-top: 2px solid var(--gold);
             border-left: 2px solid var(--gold);
             z-index: 3;
-            transition: all 0.4s;
+            transition: all 0.5s;
+            opacity: 0.6;
         }
 
         .equipa-collage .eq-main::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50px;
-            height: 50px;
+            bottom: -12px;
+            right: -12px;
+            width: 60px;
+            height: 60px;
             border-bottom: 2px solid var(--gold);
             border-right: 2px solid var(--gold);
             z-index: 3;
-            transition: all 0.4s;
+            transition: all 0.5s;
+            opacity: 0.6;
         }
 
         .equipa-collage:hover .eq-main::before,
         .equipa-collage:hover .eq-main::after {
-            width: 70px;
-            height: 70px;
+            width: 90px;
+            height: 90px;
+            opacity: 1;
         }
 
         /* Overlapping second image */
