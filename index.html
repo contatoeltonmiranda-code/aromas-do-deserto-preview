@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aromas do Deserto | Est&#233;tica e Spa - Braga</title>
+    <meta name="description" content="Aromas do Deserto — Estética avançada e Spa premium em Braga. Protocolos faciais, Laser HydraPulse, massagens terapêuticas e experiências de bem-estar. Agende a sua avaliação.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
             --max-width: 1100px;
         }
 
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
 
         body {
             font-family: var(--sans);
@@ -103,8 +104,12 @@
             inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 9990;
+            z-index: 1;
             opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            body::after { display: none; }
         }
 
         /* ========== NAVBAR ========== */
@@ -1721,6 +1726,8 @@
             transition: all 0.4s;
             text-decoration: none;
             cursor: none;
+            overflow: visible;
+            clip-path: none;
         }
 
         .whatsapp-float::before {
@@ -1730,6 +1737,7 @@
             border-radius: 50%;
             border: 1px solid rgba(37, 211, 102, 0.3);
             animation: whatsappPing 2s ease-out infinite;
+            pointer-events: none;
         }
 
         @keyframes whatsappPing {
@@ -1743,6 +1751,21 @@
         }
 
         .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                cursor: auto;
+            }
+            .whatsapp-float::before {
+                animation: none;
+                display: none;
+            }
+            .whatsapp-float svg { width: 24px; height: 24px; }
+        }
 
         /* ========== LIGHTBOX ========== */
         .lightbox {
@@ -1798,7 +1821,18 @@
 
         @media (max-width: 768px) {
             .section { padding: 80px 24px; }
-            .hero-content { padding: 0 24px; }
+            .hero-bg {
+                background-image: url('background/mobile.png');
+                background-position: top center;
+            }
+            .hero-content {
+                padding: 300px 24px 0 24px;
+                justify-content: flex-start;
+            }
+            .hero-particles { display: none; }
+            .btn-premium, .btn-outline, .btn-outline-light, .navbar-cta { cursor: auto; }
+            .btn-premium::before { animation: none; }
+            .btn-premium { animation: none; }
             .exp-grid { grid-template-columns: 1fr; }
             .filosofia-pillars { grid-template-columns: 1fr; }
             .laser-features { grid-template-columns: 1fr; }
@@ -1944,7 +1978,7 @@
         <div class="ambient-orb orb-gold" style="width:400px;height:400px;top:-100px;right:-100px;"></div>
         <div class="crenca-grid">
             <div class="crenca-image reveal-left">
-                <img src="fotos/10.jpg" alt="Sonia Sa - Fundadora Aromas do Deserto">
+                <img src="fotos/10.jpg" alt="Sonia Sa - Fundadora Aromas do Deserto" loading="lazy">
             </div>
             <div class="reveal-right">
                 <p class="section-label">A Nossa Crença</p>
@@ -2036,10 +2070,10 @@
             <div class="faciais-collage reveal-right">
                 <div class="collage-glow"></div>
                 <div class="img-main">
-                    <img src="fotos/Sónia1..jpg" alt="S&#243;nia S&#225; - Protocolos Faciais">
+                    <img src="fotos/Sónia1..jpg" alt="S&#243;nia S&#225; - Protocolos Faciais" loading="lazy">
                 </div>
                 <div class="img-overlap">
-                    <img src="fotos/13.jpg" alt="Tratamento terap&#234;utico - Aromas do Deserto">
+                    <img src="fotos/13.jpg" alt="Tratamento terap&#234;utico - Aromas do Deserto" loading="lazy">
                 </div>
             </div>
         </div>
@@ -2059,7 +2093,7 @@
         <div class="laser-grid">
             <div class="laser-image reveal-left">
                 <div class="laser-image-glow"></div>
-                <img src="fotos/15.jpg" alt="Equipa Aromas do Deserto - Tratamentos">
+                <img src="fotos/15.jpg" alt="Equipa Aromas do Deserto - Tratamentos" loading="lazy">
             </div>
             <div class="reveal-right">
                 <p class="section-label">Laser</p>
@@ -2166,28 +2200,28 @@
         </div>
         <div class="resultados-gallery">
             <div class="resultado-item reveal-scale" style="transition-delay: 0.05s" onclick="openLightbox(this)">
-                <img src="fotos/17.jpg" alt="Antes e Depois - Resultado 1">
+                <img src="fotos/17.jpg" alt="Antes e Depois - Resultado 1" loading="lazy">
             </div>
             <div class="resultado-item reveal-scale" style="transition-delay: 0.1s" onclick="openLightbox(this)">
-                <img src="fotos/18.jpg" alt="Antes e Depois - Resultado 2">
+                <img src="fotos/18.jpg" alt="Antes e Depois - Resultado 2" loading="lazy">
             </div>
             <div class="resultado-item reveal-scale" style="transition-delay: 0.15s" onclick="openLightbox(this)">
-                <img src="fotos/19.jpg" alt="Antes e Depois - Resultado 3">
+                <img src="fotos/19.jpg" alt="Antes e Depois - Resultado 3" loading="lazy">
             </div>
             <div class="resultado-item reveal-scale" style="transition-delay: 0.2s" onclick="openLightbox(this)">
-                <img src="fotos/20.jpg" alt="Antes e Depois - Resultado 4">
+                <img src="fotos/20.jpg" alt="Antes e Depois - Resultado 4" loading="lazy">
             </div>
             <div class="resultado-item reveal-scale" style="transition-delay: 0.25s" onclick="openLightbox(this)">
-                <img src="fotos/21.jpg" alt="Antes e Depois - Resultado 5">
+                <img src="fotos/21.jpg" alt="Antes e Depois - Resultado 5" loading="lazy">
             </div>
             <div class="resultado-item reveal-scale" style="transition-delay: 0.3s" onclick="openLightbox(this)">
-                <img src="fotos/22.jpg" alt="Antes e Depois - Resultado 6">
+                <img src="fotos/22.jpg" alt="Antes e Depois - Resultado 6" loading="lazy">
             </div>
             <div class="resultado-item reveal-scale" style="transition-delay: 0.35s" onclick="openLightbox(this)">
-                <img src="fotos/23.jpg" alt="Antes e Depois - Resultado 7">
+                <img src="fotos/23.jpg" alt="Antes e Depois - Resultado 7" loading="lazy">
             </div>
             <div class="resultado-item reveal-scale" style="transition-delay: 0.4s" onclick="openLightbox(this)">
-                <img src="fotos/24.jpg" alt="Antes e Depois - Resultado 8">
+                <img src="fotos/24.jpg" alt="Antes e Depois - Resultado 8" loading="lazy">
             </div>
         </div>
         <div style="text-align: center; margin-top: 48px;" class="reveal">
@@ -2230,10 +2264,10 @@
             </div>
             <div class="equipa-collage reveal-right">
                 <div class="eq-main">
-                    <img src="fotos/Sónia  e Mariana1..jpg" alt="Sonia e Mariana">
+                    <img src="fotos/Sónia  e Mariana1..jpg" alt="Sonia e Mariana" loading="lazy">
                 </div>
                 <div class="eq-overlap">
-                    <img src="fotos/12.jpg" alt="Equipa na recepcao">
+                    <img src="fotos/12.jpg" alt="Equipa na recepcao" loading="lazy">
                 </div>
             </div>
         </div>
@@ -2401,32 +2435,33 @@
     </div>
 
     <script>
-        // ========== CUSTOM CURSOR ==========
-        const dot = document.getElementById('cursorDot');
-        const ring = document.getElementById('cursorRing');
-        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        // ========== CUSTOM CURSOR (desktop only) ==========
+        if (window.matchMedia('(min-width: 1025px)').matches) {
+            const dot = document.getElementById('cursorDot');
+            const ring = document.getElementById('cursorRing');
+            let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            dot.style.left = mouseX - 4 + 'px';
-            dot.style.top = mouseY - 4 + 'px';
-        });
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                dot.style.left = mouseX - 4 + 'px';
+                dot.style.top = mouseY - 4 + 'px';
+            });
 
-        function animateRing() {
-            ringX += (mouseX - ringX) * 0.15;
-            ringY += (mouseY - ringY) * 0.15;
-            ring.style.left = ringX - 18 + 'px';
-            ring.style.top = ringY - 18 + 'px';
-            requestAnimationFrame(animateRing);
+            function animateRing() {
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
+                ring.style.left = ringX - 18 + 'px';
+                ring.style.top = ringY - 18 + 'px';
+                requestAnimationFrame(animateRing);
+            }
+            animateRing();
+
+            document.querySelectorAll('a, button, .faq-question, .resultado-item').forEach(el => {
+                el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+                el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+            });
         }
-        animateRing();
-
-        // Cursor hover effect on interactive elements
-        document.querySelectorAll('a, button, .faq-question, .resultado-item').forEach(el => {
-            el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-            el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
-        });
 
         // ========== HERO PARTICLES ==========
         const particlesContainer = document.getElementById('heroParticles');
